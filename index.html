@@ -1,101 +1,92 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Buku Tamu Digital - KPU Kab. Bolmut</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body {
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .card {
-            background: #ffffff;
-            padding: 40px 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            max-width: 420px;
-            width: 100%;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-        }
-        .logo {
-            width: 90px;
-            height: auto;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-        }
-        .instansi {
-            font-size: 12px;
-            font-weight: 600;
-            color: #800000;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-        h1 {
-            color: #0f172a;
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0 0 15px 0;
-        }
-        p {
-            color: #64748b;
-            font-size: 13px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            background: linear-gradient(135deg, #800000 0%, #b91c1c 100%);
-            color: #ffffff;
-            padding: 14px;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 15px;
-            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.25);
-            transition: transform 0.2s;
-        }
-        .btn:active {
-            transform: scale(0.98);
-        }
-        .footer {
-            margin-top: 25px;
-            font-size: 11px;
-            color: #94a3b8;
-            border-top: 1px dashed #e2e8f0;
-            padding-top: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!-- JURUS ANTI-CACHE UNTUK GITHUB PAGES -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  
+  <title>BUKU TAMU DIGITAL KPU Bolmut</title>
+  
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/46/KPU_Logo.svg" type="image/svg+xml">
+
+  <style>
+    /* Menghilangkan semua jarak dan membuat bingkai memenuhi 100% layar HP/Laptop */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Mencegah layar utama bergeser */
+      background-color: #f8fafc;
+    }
+    
+    /* Desain Pembungkus (Iframe) */
+    .app-container {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    /* Animasi Loading sebelum aplikasi Google Script terbuka */
+    .loading-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #0f172a; /* Warna gelap khas aplikasi kita */
+      z-index: 1;
+    }
+    .loader {
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-left-color: #ef4444; /* Warna merah KPU */
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .loading-text { color: white; font-family: sans-serif; font-size: 14px; font-weight: bold; letter-spacing: 2px; }
+  </style>
 </head>
 <body>
 
-    <div class="card">
-        <!-- Logo Resmi KPU -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/KPU_Logo.svg/500px-KPU_Logo.svg.png" alt="Logo KPU" class="logo">
-        
-        <div class="instansi">Komisi Pemilihan Umum<br>Kabupaten Bolaang Mongondow Utara</div>
-        <h1>Buku Tamu Digital</h1>
-        
-        <p>Silakan klik tombol di bawah ini untuk mengisi daftar hadir dan kunjungan tamu secara resmi dan digital.</p>
-        
-        <!-- Link Google Apps Script Anda -->
-        <a href="https://script.google.com/macros/s/AKfycbxmXGbWEp-i0pweYXhIUcFQ9RKUobQT9Ylq0JWfQ9aDow9XAtDOlw6Di0GsKdCaJ0PPw/exec" class="btn">📝 Isi Buku Tamu Sekarang</a>
-        
-        <div class="footer">
-            Sistem Layanan Administrasi Publik<br>KPU Kab. Bolmut © 2026
-        </div>
-    </div>
+  <div class="loading-screen">
+    <div class="loader"></div>
+    <div class="loading-text">MEMUAT BUKU TAMU...</div>
+  </div>
 
+  <iframe class="app-container" src="https://script.google.com/macros/s/AKfycbw3WVg-nX1jMYxerA0sLLouSuPDt0nYxAypspdL7nSuKhGt8IHOnzwfLMu8AmT2-MlVRQ/exec" allow="camera; microphone; fullscreen; display-capture" allowfullscreen></iframe>
+
+  <!-- SCRIPT AUTO-REFRESH DARI SATU RUMAH -->
+  <script>
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      // Jika mendeteksi parameter 'v' (waktu) dari link Satu Rumah
+      if (urlParams.has('v')) {
+        const currentVersion = urlParams.get('v');
+        const lastVersion = sessionStorage.getItem('appVersion');
+        
+        // Jika versinya berbeda, paksa muat ulang halaman dari server
+        if (lastVersion !== currentVersion) {
+          sessionStorage.setItem('appVersion', currentVersion);
+          window.location.reload(true); 
+        }
+      }
+    };
+  </script>
 </body>
 </html>
