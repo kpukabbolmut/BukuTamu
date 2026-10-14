@@ -2,31 +2,100 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <!-- Meta viewport ini mencegah pengguna zoom in/out sembarangan agar seperti aplikasi asli -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Buku Tamu Digital - KPU Kab. Bolmut</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Menghilangkan margin dan membuat iframe memenuhi seluruh layar HP */
-        body, html {
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body {
             margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #f8fafc;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        iframe {
+        .card {
+            background: #ffffff;
+            padding: 40px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            max-width: 420px;
             width: 100%;
-            height: 100%;
-            border: none;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        .logo {
+            width: 90px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+        .instansi {
+            font-size: 12px;
+            font-weight: 600;
+            color: #800000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        h1 {
+            color: #0f172a;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+        }
+        p {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .btn {
             display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #800000 0%, #b91c1c 100%);
+            color: #ffffff;
+            padding: 14px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.25);
+            transition: transform 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        .footer {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #94a3b8;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 15px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Ganti MASUKKAN_LINK_APPS_SCRIPT_DISINI dengan link Google Script Anda -->
-    <iframe src="https://script.google.com/macros/s/AKfycbymXGbWEp-i0pweYXhlUcFQ9RKuobQT9Ylq0JWfqF9aDow9XAtdOLw6Di0GsKdCaJ0PPw/exec" allow="camera; capture"></iframe>
+    <div class="card">
+        <!-- Logo Resmi KPU -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/KPU_Logo.svg/500px-KPU_Logo.svg.png" alt="Logo KPU" class="logo">
+        
+        <div class="instansi">Komisi Pemilihan Umum<br>Kabupaten Bolaang Mongondow Utara</div>
+        <h1>Buku Tamu Digital</h1>
+        
+        <p>Silakan klik tombol di bawah ini untuk mengisi daftar hadir dan kunjungan tamu secara resmi dan digital.</p>
+        
+        <!-- Ganti LINK_WEB_APP_GOOGLE_SCRIPT dengan URL Web App Apps Script Anda yang berakhiran /exec -->
+        <a href="https://script.google.com/macros/s/AKfycbymXGbWEp-i0pweYXhlUcFQ9RKuobQT9Ylq0JWfqF9aDow9XAtdOLw6Di0GsKdCaJ0PPw/exec" class="btn">📝 Isi Buku Tamu Sekarang</a>
+        
+        <div class="footer">
+            Sistem Layanan Administrasi Publik<br>KPU Kab. Bolmut © 2026
+        </div>
+    </div>
 
 </body>
 </html>
